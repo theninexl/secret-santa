@@ -1,4 +1,0 @@
-@function getLines($value){
-    $result: ($lineHeightDT * $value) * 1px;
-    @return $result;
-}
