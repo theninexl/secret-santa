@@ -118,19 +118,20 @@ export const ChooseRandom = () => {
       }
     },
     final: () => {
-      console.log('final');
+      // console.log('final');
       assign.results.map(pareja => {
-        console.log(pareja.parejaID, pareja.name1, pareja.email1, pareja.name2);
+        // console.log(pareja.parejaID, pareja.name1, pareja.email1, pareja.name2);
         sendEmails(pareja.name1, pareja.email1, pareja.name2)
       })
       dispatch(emptyParticipants());
     }
   }
 
-  if (participants.length > 0){
-    // assign.init();
+  const lanzaSorteo = () => {
+    if (participantsList.length >= 3) {
+      assign.init();
+    }
   }
-
   
   return (
     <>
@@ -163,6 +164,7 @@ export const ChooseRandom = () => {
         <>
         <button
           type='submit'
+          onClick={lanzaSorteo}
           className='bg-indigo-500 rounded-xl text-l sm:text-xl font-bold py-2 flex justify-center items-center gap-1 mt-2'>
             Lanzar sorteo</button>
         <p className='text-slate-700'>Por favor, chequead la bandeja de spam al crear el sorteo</p>
