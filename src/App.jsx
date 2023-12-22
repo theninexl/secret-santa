@@ -5,7 +5,7 @@ function App() {
 
   return (
     <>
-      <main className='bg-blue-500 h-lvh font-plex text-white pt-6 lg:pt-20'>
+      <main className='bg-blue-500 font-plex text-white pt-6 lg:pt-20 pb-12'>
         <section className='container mx-auto lg:w-8/12 flex flex-col px-6 lg:px-0 gap-px'>
           <h1 className='text-5xl lg:text-7xl font-yesteryear flex justify-center md:justify-start mb-4'>Amigo Invisible</h1>
           <ParticipantsForm />

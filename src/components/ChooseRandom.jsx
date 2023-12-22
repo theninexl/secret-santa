@@ -139,9 +139,14 @@ export const ChooseRandom = () => {
       <h3 className='text-slate-700  text-xl md:text-2xl font-bold flex flex-row gap-2'>
         Listado participantes<span className='text-slate-500'>({participants.length})</span>
       </h3>
-      {participantsList.length < 3 ?
+      {(participantsList.length < 3) ?
         <>
         <span className='text-rose-800 font-bold'>No hay suficientes participantes. Añade más</span>
+        </>
+        : ''}
+      {(participantsList.length >= 12) ?
+        <>
+        <span className='text-rose-800 font-bold'>No puedes añadir más participantes</span>
         </>
         : ''}
       <ul
@@ -160,7 +165,7 @@ export const ChooseRandom = () => {
           </li>
         );
       })}</ul>
-      {participantsList.length >= 3 ?
+      {(participantsList.length >= 3 && participantsList.length <= 12) ?
         <>
         <button
           type='submit'

@@ -20,8 +20,7 @@ export const ParticipantsForm = () => {
     const participantName = participantNameInput.value;
     const participantEmailInput = form.querySelector('#participantEmail');
     const participantEmail = participantEmailInput.value;
-    const newParticipantId = participantsList.length+1;  
-    
+    const newParticipantId = participantsList.length+1;
     dispatch(addParticipant({id:newParticipantId, name:participantName, email:participantEmail}));  
   }
 
@@ -69,10 +68,15 @@ export const ParticipantsForm = () => {
               </label>
             </div>
         </div>
-        <button
-          type='submit'
-          className='bg-indigo-500 rounded-xl text-l sm:text-xl font-bold py-2 flex justify-center items-center gap-1'>
-            <UserPlusIcon className='size-5'/>Añadir participante</button>
+        { participantsList.length < 12 ? 
+          <>
+            <button
+              type='submit'
+              className='bg-indigo-500 rounded-xl text-l sm:text-xl font-bold py-2 flex justify-center items-center gap-1'>
+                <UserPlusIcon className='size-5'/>Añadir participante</button>
+          </>
+        :''}
+        
       </form>
     </div>    
     </>
