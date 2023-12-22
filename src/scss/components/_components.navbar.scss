@@ -1,0 +1,107 @@
+.bi-c-navbar {
+    $block: &;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    gap:getSize($bigger);
+    padding: 0 getGutter(half);
+
+    @media screen and (min-width: getBreakpoint(medium)){
+        padding: 0 getGutter(regular);
+    }
+
+    &__left, &__right, &__center {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        gap:getSize($bigger);
+    }    
+
+    &__left, &__right {
+        flex-grow: 0;
+        
+    }
+
+    &__center {
+        flex-grow: 1;
+    }
+
+    &__navBtns {
+        display: flex;
+        gap:getSize($small);
+    }
+
+    &--secondary {
+        gap:0;
+        overflow-x:scroll;
+        white-space: nowrap;
+        @include font-size($mouseFontSizeMB, $lineHeightMB);
+
+        #{$block}__left {
+            padding: getSize($small) 0;
+            border-right: 1px solid getColor(gray-medium);
+            padding-right: getSize($big);
+            margin-right: getSize($big);
+        }
+
+        @media screen and (min-width: getBreakpoint(medium)){
+            @include font-size($defFontSizeDT, $lineHeightDT);
+
+            #{$block}__left {
+                padding: getSize($small) 0;
+                border-right: 1px solid getColor(gray-medium);
+                padding-right: getSize($bigger);
+                margin-right: getSize($bigger);
+            }            
+        }
+    }
+}
+
+.bi-c-navbar-links {
+    $block: &;
+
+    &-hrz {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: stretch;
+        gap: getSize($small);
+        height: getSize($huge);
+    }
+
+    &-vert {
+        display: flex;
+        flex-flow: column nowrap;
+        gap: getSize($small);
+    }
+
+    &__textbutt {
+        background-color:getColor(white);
+        box-shadow:0px 0px 0px 1px getColor(gray-medium) inset;
+        border-radius:getSize($small);
+        color:getColor(secondary);
+        cursor:pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: getSize($medium);
+        line-height: getSize($huge);
+        padding: 0 getSize($medium);
+        @extend .bi-u-text-base-black;
+
+        &:hover {
+            text-decoration: none;
+            background-color: getColor(gray-light);
+        }
+
+        &.active {
+            background-color: getColor(primary);
+            box-shadow: 0px 0px 0px 0px;
+            color:getColor(white);
+        }
+
+        .icon {
+            height: getSize($bigger);
+            width: getSize($bigger);
+        }
+    }
+}

@@ -1,0 +1,37 @@
+.bi-l-section {
+  $block:&;
+  padding: 0 getGutter(regular);
+
+  &--table-head {
+    display:flex;
+    align-items: center;
+    
+
+    .bi-u-text-headM,.bi-u-text-headS, .bi-u-text-headL {
+      flex-grow:1;
+      padding: 0 getGutter(half);
+      padding-bottom: getSize($medium);
+
+      @media screen and (min-width: getBreakpoint(medium)){
+        padding: 0 getGutter(regular);
+      }
+    }
+
+    .bi-u-text-headM + .bi-u-text-headS {
+      padding-bottom: getSize($medium);
+      padding-top: getSize($medium);
+    }
+
+    .bi-c-form-simple {
+      padding: 0 getGutter(regular);
+    }
+  }
+
+  @media screen and (min-width: getBreakpoint(medium)){
+
+    &--table-head {
+      padding-top: getSize($bigger);
+    }
+
+  }
+}

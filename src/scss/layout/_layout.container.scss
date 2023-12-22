@@ -1,0 +1,46 @@
+.bi-l-container {
+    $block: &;
+    @include bi-container;
+
+    &--no-padding {
+        padding:0;
+    }
+
+    &--big-padding {
+        padding-top: getLines(2);
+        padding-bottom: getLines(2);
+
+        @media screen and (min-width: getBreakpoint(medium)){
+            padding-top: getLines(2);
+            padding-bottom: getLines(2);
+        }
+    }
+
+    &--big-top-padding {
+        padding-top: getLines(2);
+        @media screen and (min-width: getBreakpoint(medium)){
+            padding-top: getLines(5);
+        }
+    }
+
+    &--big-bottom-padding {
+        padding-bottom: getLines(2);
+        @media screen and (min-width: getBreakpoint(medium)){
+            padding-bottom: getLines(5);
+        }
+    }
+
+    &-cols {
+        display: flex;
+        flex-flow: column nowrap;
+        width: 100%;
+    }
+
+    @media screen and (min-width: getBreakpoint(medium)){
+        &-cols {
+            display: flex;
+            flex-flow: row nowrap;
+            width: 100%;
+        }
+    }
+}

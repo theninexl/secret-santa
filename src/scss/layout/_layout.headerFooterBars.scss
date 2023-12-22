@@ -1,0 +1,37 @@
+.bi-l-header {
+    $block: &;
+    background-color: getColor(white);
+    position: fixed;
+    top:0;
+    z-index: 1;
+    width: 100%;
+
+    &__main-bar {
+        border-bottom: 1px solid getColor(gray-medium);
+        padding: getSize($bigger) 0;
+    }
+
+    &__sec-bar {
+        border-bottom: 1px solid getColor(gray-medium);
+        padding: getSize($small) 0;
+
+        @media screen and (min-width: getBreakpoint(medium)){
+            padding: getSize($bigger) 0;
+        }
+    }
+
+}
+
+.bi-l-footer {
+    border-top:1px solid getColor(gray-medium);
+    padding-top: getLines(1);
+    padding-bottom: getLines(1);
+}
+
+.bi-l-body-static-header {
+    border-bottom:1px solid getColor(gray-medium);
+    display: flex;
+    align-items: center;
+    height: getSize($huge);
+    color:getColor(secondary);
+}

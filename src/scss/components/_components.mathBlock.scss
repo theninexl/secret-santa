@@ -1,0 +1,30 @@
+.bi-c-mathBlock {
+  $block:&;
+  background-color: getColor(gray-light);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: getSize($big);
+  margin-bottom: getSize($big);
+  padding:getSize($big) 0;
+  @include font-size($fontSizeJumpDT1, $lineHeightDT);
+
+  &__base {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap:getSize($small);
+  }
+
+  .math-fraction {
+    $block:&;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    &__divider {
+      border-top: 1px solid getColor(secondary);
+      height: 1px;
+      width: 100%;
+    }
+  }
+}

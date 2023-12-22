@@ -1,0 +1,27 @@
+.bi-l-col {
+    $block: &;
+    border-right: 1px solid getColor(gray-medium);
+    flex-grow: 1;
+    flex-basis: 0;
+    padding: 0 getGutter(half);
+
+    &:last-child {
+        border: 0;
+    }
+
+    @media screen and (min-width: getBreakpoint(medium)){
+        padding: 0 getGutter(regular);
+    }
+}
+
+.bi-l-4col {
+    $block: &;
+    margin:0 auto;
+    width: getCols(4);
+}
+
+.bi-l-6col {
+    $block: &;
+    margin:0 auto;
+    width: getCols(6);
+}

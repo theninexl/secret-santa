@@ -1,0 +1,59 @@
+@mixin button {
+    border:0;
+    border-radius:getSize($small);
+    cursor:pointer;
+    text-align: center;
+
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+@mixin button-primary {
+    color:getColor(white);
+    background-color: getColor(primary);
+}
+
+@mixin button-secondary {
+    color:getColor(white);
+    background-color: getColor(secondary);
+}
+
+@mixin button-transparent {
+    color:getColor(primary);
+    background-color: getColor(white);
+    box-shadow:0px 0px 0px 1px getColor(gray-medium) inset;
+}
+
+@mixin button-ghost {
+    color:getColor(secondary);
+    background:transparent;
+}
+
+@mixin button-ghost-inactive {
+    color:getColor(gray-medium);
+    background: transparent;
+    cursor: default;
+}
+
+@mixin button-inactive {
+    color:getColor(white);
+    background-color: getColor(gray-light);
+}
+
+@mixin button-large {
+    padding:getSize($medium);
+    @include button;
+    @extend .bi-u-text-base-black;
+}
+
+@mixin button-medium {
+    padding: getSize($tiny) getSize($big);
+    @include button;
+    @extend .bi-u-text-base-black;
+}
+
+@mixin button-small {
+    padding: getSize($tiny) getSize($big);
+    @include button;
+}

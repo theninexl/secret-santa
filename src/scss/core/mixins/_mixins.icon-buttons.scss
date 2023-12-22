@@ -1,0 +1,147 @@
+@mixin icon-button {
+    border:0;
+    border-radius:getSize($small);
+    cursor:pointer;
+    display: inline-flex;
+    justify-content:center;
+    align-items:center;
+    position:relative;
+}
+
+@mixin icon-button-big {      
+    width: getSize($huge);
+    height: getSize($huge);
+    padding:0;
+    @include icon-button;  
+    @extend .bi-u-text-base-black;
+
+    span:not(.cm-o-notification-bubble) {
+        font-size: getSize($bigger);
+    }
+}
+
+@mixin icon-button-enormous {      
+    min-width: getSize($enormous);
+    height: getSize($enormous);
+    padding:0;
+    @include icon-button;  
+    @extend .bi-u-text-base-black;
+
+    span:not(.cm-o-notification-bubble) {
+        font-size: getSize($huge);
+    }
+}
+
+@mixin icon-button-small {
+    @include icon-button;  
+    width: getSize($huge);
+    height: getSize($huge);
+
+    svg {
+        width: getSize($bigger);
+        height: getSize($bigger);
+    }
+}
+
+@mixin icon-button-primary {
+    background-color:getColor(white);
+    box-shadow:0px 0px 0px 1px getColor(gray-medium) inset;
+
+    svg {
+        color:getColor(primary);
+    }
+
+    &:hover {
+        background-color: getColor(gray-light);
+    }
+}
+
+@mixin icon-button-secondary {
+    background-color:getColor(white);
+    box-shadow:0px 0px 0px 1px getColor(gray-medium) inset;
+
+    svg {
+        color:getColor(secondary);
+    }
+
+    &:hover {
+        background-color: getColor(gray-light);
+    }
+}
+
+@mixin icon-button-pressed {
+    background-color:getColor(primary);
+    box-shadow:none;
+
+    span {
+        color:getColor(white);
+    }
+}
+
+@mixin icon-button-pressed--secondary {
+    background-color:getColor(secondary);
+    box-shadow:none;
+
+    span {
+        color:getColor(white);
+    }
+}
+
+@mixin icon-button-success {
+    background-color:getColor(white);
+    box-shadow:0px 0px 0px 1px getColor(gray-medium) inset;
+
+    svg {
+        color:getColor(success);
+    }
+
+    &:hover {
+        background-color: getColor(gray-light);
+    }
+}
+
+@mixin icon-button-warning {
+    background-color:getColor(white);
+    box-shadow:0px 0px 0px 1px getColor(gray-medium) inset;
+
+    svg {
+        color:getColor(warning);
+    }
+
+    &:hover {
+        background-color: getColor(gray-light);
+    }
+}
+
+
+@mixin icon-button-error {
+    background-color:getColor(white);
+    box-shadow:0px 0px 0px 1px getColor(gray-medium) inset;
+
+    svg {
+        color:getColor(danger);
+    }
+
+    &:hover {
+        background-color: getColor(gray-light);
+    }
+}
+
+@mixin icon-button-disabled {
+    background-color:getColor(white);
+    box-shadow:0px 0px 0px 1px getColor(gray-light) inset;
+    cursor:initial;
+
+    svg {
+        color:getColor(gray-medium);
+    }
+
+    &:hover {
+        background-color: getColor(white);
+    }
+}
+
+@mixin icon-button-deco {
+    background-color:getColor(white);
+    box-shadow:0px 0px 0px 1px getColor(gray-medium) inset;
+}
