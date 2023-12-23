@@ -1,11 +1,15 @@
 import { useDispatch, useSelector } from "react-redux";
 import { emptyParticipants } from "../redux/participantsSlice";
-import { UserIcon, UserPlusIcon } from "@heroicons/react/24/solid";
+import { setDrawDone } from '../redux/drawStateSlice';
+import { UserIcon } from "@heroicons/react/24/solid";
 
 export const ChooseRandom = () => {
   const dispatch = useDispatch();
   const participants = useSelector((state) => state.participants);
   const participantsList = Array.from(participants);  
+  const drawState = useSelector((state) => state.drawState.isDrawDone);
+  
+  console.log(drawState);
 
   const sendEmails = (senderName,senderEmail,receiverName) => {
     const Email = { 
@@ -22,7 +26,7 @@ export const ChooseRandom = () => {
 
     Email.send(config).then((data) => {
         console.log(data);
-        console.log('mandado');
+        dispatch(setDrawDone(true));
       });
   }
 
@@ -127,7 +131,8 @@ export const ChooseRandom = () => {
     }
   }
 
-  const lanzaSorteo = () => {
+  const lanzaSorteo = (e) => {
+    e.preventDefault();
     if (participantsList.length >= 3) {
       assign.init();
     }
@@ -170,9 +175,8 @@ export const ChooseRandom = () => {
         <button
           type='submit'
           onClick={lanzaSorteo}
-          className='bg-indigo-500 rounded-xl text-l sm:text-xl font-bold py-2 flex justify-center items-center gap-1 mt-2'>
-            Lanzar sorteo</button>
-        <p className='text-slate-700'>Por favor, chequead la bandeja de spam al crear el sorteo</p>
+          className='bg-green-600 rounded-xl text-l sm:text-xl font-bold py-2 flex justify-center items-center gap-1 mt-4 mb-1'>
+            ¡Lanzar sorteo!</button>
         </>
         :''
       }

@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { useDispatch, useSelector } from "react-redux";
-import { addParticipant, emptyParticipants } from "../redux/participantsSlice";
+import { addParticipant } from "../redux/participantsSlice";
 import { AtSymbolIcon, UserIcon, UserPlusIcon } from '@heroicons/react/24/outline'
 
 export const ParticipantsForm = () => {
